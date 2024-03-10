@@ -12,6 +12,13 @@ public class Rational
         this.denominator = 1;
     }
     
+    // One param (numerator) constructor
+    public Rational(int numerator)
+    {
+    	this.numerator = numerator;
+    	this.denominator = 1;
+    }
+    
     public int numerator() 
     {
     	   return 0;
