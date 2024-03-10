@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: numbers.RationalTest
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.07 s - in numbers.RationalTest
+Tests run: 120, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.115 s - in numbers.RationalTest
