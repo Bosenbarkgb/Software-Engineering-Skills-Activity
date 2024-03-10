@@ -38,6 +38,12 @@ public class Rational
         this.numerator = numerator / gcd;
         this.denominator = denominator / gcd;
     }
+    
+    public Rational(Rational original)
+    {
+    	this.numerator = original.numerator;
+    	this.denominator = original.denominator;
+    }
 
     public int getNumerator() 
     {

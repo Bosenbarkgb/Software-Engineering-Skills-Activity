@@ -38,21 +38,27 @@ public class Rational
 <span class="fc" id="L38">        this.numerator = numerator / gcd;</span>
 <span class="fc" id="L39">        this.denominator = denominator / gcd;</span>
 <span class="fc" id="L40">    }</span>
+    
+<span class="fc" id="L42">    public Rational(Rational original)</span>
+    {
+<span class="fc" id="L44">    	this.numerator = original.numerator;</span>
+<span class="fc" id="L45">    	this.denominator = original.denominator;</span>
+<span class="fc" id="L46">    }</span>
 
     public int getNumerator() 
     {
-<span class="fc" id="L44">        return numerator;</span>
+<span class="fc" id="L50">        return numerator;</span>
     }
 
     public int getDenominator() 
     {
-<span class="fc" id="L49">        return denominator;</span>
+<span class="fc" id="L55">        return denominator;</span>
     }
     
     // Helper method for Euclidean algorithm
     private static int gcd(int a, int b) 
     {
-<span class="fc bfc" id="L55" title="All 2 branches covered.">        return b == 0 ? a : gcd(b, a % b);</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">        return b == 0 ? a : gcd(b, a % b);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

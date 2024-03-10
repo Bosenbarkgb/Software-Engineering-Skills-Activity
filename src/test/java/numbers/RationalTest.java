@@ -92,4 +92,19 @@ public class RationalTest
         assertThat(value.getNumerator(), is(1));
         assertThat(value.getDenominator(), is(1));
     }
+    
+    @Test
+    public void copyConstructorTest() {
+        // Given I have created the Rational value 2/3
+        Rational original = new Rational(2, 3);
+
+        // When I create a Rational value as a copy of the original Rational value
+        Rational copy = new Rational(original);
+
+        // Then the copy’s value should have numerator 2
+        assertThat("The copy's numerator is 2", copy.getNumerator(), is(2));
+
+        // And the copy’s value should have denominator 3
+        assertThat("The copy's denominator is 3", copy.getDenominator(), is(3));
+    }
 }
