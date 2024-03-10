@@ -2,7 +2,7 @@ package numbers;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
-
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
 public class RationalTest
@@ -37,5 +37,59 @@ public class RationalTest
     	
         assertThat("numerator is " + testNumerator, rational.getNumerator(), is(testNumerator));
         assertThat("denominator is " + testDenominator, rational.getDenominator(), is(testDenominator));
+    }
+    
+    // Test for zero denominator
+    @Test
+    public void shouldThrowExceptionForZeroDenominator() {
+        assertThrows(IllegalArgumentException.class, () -> new Rational(1, 0));
+    }
+    
+    // Test for negative numerator
+    @Test
+    public void negativeNumeratorShouldWorkCorrectly() {
+        Rational value = new Rational(-2, 3);
+        assertThat(value.getNumerator(), is(-2));
+        assertThat(value.getDenominator(), is(3));
+    }
+
+    // Test for negative denominator
+    @Test
+    public void negativeDenominatorShouldWorkCorrectly() {
+        Rational value = new Rational(2, -3);
+        assertThat(value.getNumerator(), is(-2));
+        assertThat(value.getDenominator(), is(3));
+    }
+    
+    // Test for both negative numerator and denominator
+    @Test
+    public void bothNegativeShouldBePositive() {
+        Rational value = new Rational(-2, -3);
+        assertThat(value.getNumerator(), is(2));
+        assertThat(value.getDenominator(), is(3));
+    }
+    
+    // Test for numerator greater than denominator
+    @Test
+    public void numeratorGreaterThanDenominator() {
+        Rational value = new Rational(5, 3);
+        assertThat(value.getNumerator(), is(5));
+        assertThat(value.getDenominator(), is(3));
+    }
+    
+    // Test for numerator less than denominator
+    @Test
+    public void numeratorLessThanDenominator() {
+        Rational value = new Rational(3, 5);
+        assertThat(value.getNumerator(), is(3));
+        assertThat(value.getDenominator(), is(5));
+    }
+    
+    // Test for numerator equal to denominator
+    @Test
+    public void numeratorEqualToDenominator() {
+        Rational value = new Rational(3, 3);
+        assertThat(value.getNumerator(), is(1));
+        assertThat(value.getDenominator(), is(1));
     }
 }

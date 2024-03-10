@@ -6,33 +6,53 @@ public class Rational
     private int denominator;
 
     // Default constructor
-<span class="fc" id="L9">    public Rational() </span>
+    public Rational() 
     {
-<span class="fc" id="L11">        this.numerator = 0;</span>
-<span class="fc" id="L12">        this.denominator = 1;</span>
-<span class="fc" id="L13">    }</span>
+<span class="fc" id="L11">        this(0, 1); // chaining with 2 param constructor</span>
+<span class="fc" id="L12">    }</span>
     
     // One param (numerator) constructor
     public Rational(int numerator)
     {
-<span class="fc" id="L18">    	this(numerator, 1); // chaining with 2 param constructor</span>
-<span class="fc" id="L19">    }</span>
+<span class="fc" id="L17">    	this(numerator, 1); // chaining with 2 param constructor</span>
+<span class="fc" id="L18">    }</span>
     
     // Two param (numerator, denominator) constructor
-<span class="fc" id="L22">    public Rational(int numerator, int denominator)</span>
+<span class="fc" id="L21">    public Rational(int numerator, int denominator)</span>
     {
-<span class="fc" id="L24">    	this.numerator = numerator;</span>
-<span class="fc" id="L25">    	this.denominator = denominator;</span>
-<span class="fc" id="L26">    }</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">    	if (denominator == 0) </span>
+    	{
+<span class="fc" id="L25">            throw new IllegalArgumentException(&quot;Denominator can't be zero.&quot;);</span>
+        }
+
+        // Normalize the rational number if the denominator is negative
+    	// Ensures that the rational number is always represented with a positive denominator
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (denominator &lt; 0) </span>
+        {
+<span class="fc" id="L32">            numerator = -numerator;</span>
+<span class="fc" id="L33">            denominator = -denominator;</span>
+        }
+
+        // Simplify the fraction
+<span class="fc" id="L37">        int gcd = gcd(numerator, denominator);</span>
+<span class="fc" id="L38">        this.numerator = numerator / gcd;</span>
+<span class="fc" id="L39">        this.denominator = denominator / gcd;</span>
+<span class="fc" id="L40">    }</span>
 
     public int getNumerator() 
     {
-<span class="fc" id="L30">        return numerator;</span>
+<span class="fc" id="L44">        return numerator;</span>
     }
 
     public int getDenominator() 
     {
-<span class="fc" id="L35">        return denominator;</span>
+<span class="fc" id="L49">        return denominator;</span>
+    }
+    
+    // Helper method for Euclidean algorithm
+    private static int gcd(int a, int b) 
+    {
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        return b == 0 ? a : gcd(b, a % b);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

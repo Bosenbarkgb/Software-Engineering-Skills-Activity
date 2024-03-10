@@ -8,8 +8,7 @@ public class Rational
     // Default constructor
     public Rational() 
     {
-        this.numerator = 0;
-        this.denominator = 1;
+        this(0, 1); // chaining with 2 param constructor
     }
     
     // One param (numerator) constructor
@@ -21,8 +20,23 @@ public class Rational
     // Two param (numerator, denominator) constructor
     public Rational(int numerator, int denominator)
     {
-    	this.numerator = numerator;
-    	this.denominator = denominator;
+    	if (denominator == 0) 
+    	{
+            throw new IllegalArgumentException("Denominator can't be zero.");
+        }
+
+        // Normalize the rational number if the denominator is negative
+    	// Ensures that the rational number is always represented with a positive denominator
+        if (denominator < 0) 
+        {
+            numerator = -numerator;
+            denominator = -denominator;
+        }
+
+        // Simplify the fraction
+        int gcd = gcd(numerator, denominator);
+        this.numerator = numerator / gcd;
+        this.denominator = denominator / gcd;
     }
 
     public int getNumerator() 
@@ -33,5 +47,11 @@ public class Rational
     public int getDenominator() 
     {
         return denominator;
+    }
+    
+    // Helper method for Euclidean algorithm
+    private static int gcd(int a, int b) 
+    {
+        return b == 0 ? a : gcd(b, a % b);
     }
 }
