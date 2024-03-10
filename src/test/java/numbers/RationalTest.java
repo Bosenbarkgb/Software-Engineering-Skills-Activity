@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class RationalTest
 {
+	// default constructor; no param
     @Test
     public void defaultConstructorShouldCreateZero() 
     {
@@ -24,5 +25,17 @@ public class RationalTest
     	
         assertThat("numerator is " + testNumerator, rational.getNumerator(), is(testNumerator));
         assertThat("denominator is 1", rational.getDenominator(), is(1));
+    }
+    
+    // Two param test
+    @Test
+    public void TwoParamTest()
+    {
+    	int testNumerator = 2;
+    	int testDenominator = 3;
+    	Rational rational = new Rational(testNumerator, testDenominator);
+    	
+        assertThat("numerator is " + testNumerator, rational.getNumerator(), is(testNumerator));
+        assertThat("denominator is " + testDenominator, rational.getDenominator(), is(testDenominator));
     }
 }

@@ -19,6 +19,13 @@ public class Rational
     	this.denominator = 1;
     }
     
+    // Two param (numerator, denominator) constructor
+    public Rational(int numerator, int denominator)
+    {
+    	this.numerator = numerator;
+    	this.denominator = denominator;
+    }
+    
     public int numerator() 
     {
     	   return 0;
