@@ -19,10 +19,10 @@ public class RationalTest
     @Test
     public void numeratorAsSingleParamTest()
     {
-    	int testNumerator = 5;
+    	int testNumerator = 2;
     	Rational rational = new Rational(testNumerator);
     	
-        assertThat(rational.getNumerator(), is(testNumerator));
-        assertThat(rational.getDenominator(), is(1));
+        assertThat("numerator is " + testNumerator, rational.getNumerator(), is(testNumerator));
+        assertThat("denominator is 1", rational.getDenominator(), is(1));
     }
 }
