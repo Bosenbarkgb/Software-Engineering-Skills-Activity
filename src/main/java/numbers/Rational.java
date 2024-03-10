@@ -74,4 +74,10 @@ public class Rational
     	}
     	return new Rational(this.denominator, this.numerator);
     }
+    
+    // multiplies the top and bottom values
+    public Rational times(Rational r)
+    {
+    	return new Rational(this.numerator * r.numerator, this.denominator * r.denominator);
+    }
 }

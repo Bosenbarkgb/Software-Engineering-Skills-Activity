@@ -135,4 +135,20 @@ public class RationalTest
     	Rational value = new Rational(0,1);
     	assertThrows(IllegalArgumentException.class, value::reciprocal);
     }
+    
+    @Test
+    public void timesShouldMultiplyRationalsCorrectly() 
+    {
+        // Given we have Rationals representing 2/3 and 5/7
+        Rational p = new Rational(2, 3);
+        Rational r = new Rational(5, 7);
+        
+        // When the program computes the value of 2/3 times 5/7
+        Rational result = p.times(r);
+        
+        // Then the result should be 10/21
+        assertThat("2 * 5 = 10", result.getNumerator(), is(10));
+        assertThat("3 * 7 = 21", result.getDenominator(), is(21));
+    }
+
 }
