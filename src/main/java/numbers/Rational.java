@@ -60,4 +60,9 @@ public class Rational
     {
         return b == 0 ? a : gcd(b, a % b);
     }
+    
+    public Rational opposite()
+    {
+    	return new Rational(-this.numerator, this.denominator);
+    }
 }

@@ -107,4 +107,13 @@ public class RationalTest
         // And the copy’s value should have denominator 3
         assertThat("The copy's denominator is 3", copy.getDenominator(), is(3));
     }
+    
+    @Test
+    public void oppositeReturnsAdditiveInverseTest()
+    {
+    	Rational value = new Rational(2,3);
+    	Rational opposite = value.opposite();
+    	assertThat("the opposite of 2 is -2", opposite.getNumerator(), is(-2));
+    	assertThat("the denominator should be 3", opposite.getDenominator(), is(3));
+    }
 }

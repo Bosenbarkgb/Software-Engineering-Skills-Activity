@@ -60,5 +60,10 @@ public class Rational
     {
 <span class="fc bfc" id="L61" title="All 2 branches covered.">        return b == 0 ? a : gcd(b, a % b);</span>
     }
+    
+    public Rational opposite()
+    {
+<span class="fc" id="L66">    	return new Rational(-this.numerator, this.denominator);</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
