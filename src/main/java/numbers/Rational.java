@@ -15,8 +15,7 @@ public class Rational
     // One param (numerator) constructor
     public Rational(int numerator)
     {
-    	this.numerator = numerator;
-    	this.denominator = 1;
+    	this(numerator, 1); // chaining with 2 param constructor
     }
     
     // Two param (numerator, denominator) constructor

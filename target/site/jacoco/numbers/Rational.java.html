@@ -13,27 +13,26 @@ public class Rational
 <span class="fc" id="L13">    }</span>
     
     // One param (numerator) constructor
-<span class="fc" id="L16">    public Rational(int numerator)</span>
+    public Rational(int numerator)
     {
-<span class="fc" id="L18">    	this.numerator = numerator;</span>
-<span class="fc" id="L19">    	this.denominator = 1;</span>
-<span class="fc" id="L20">    }</span>
+<span class="fc" id="L18">    	this(numerator, 1); // chaining with 2 param constructor</span>
+<span class="fc" id="L19">    }</span>
     
     // Two param (numerator, denominator) constructor
-<span class="fc" id="L23">    public Rational(int numerator, int denominator)</span>
+<span class="fc" id="L22">    public Rational(int numerator, int denominator)</span>
     {
-<span class="fc" id="L25">    	this.numerator = numerator;</span>
-<span class="fc" id="L26">    	this.denominator = denominator;</span>
-<span class="fc" id="L27">    }</span>
+<span class="fc" id="L24">    	this.numerator = numerator;</span>
+<span class="fc" id="L25">    	this.denominator = denominator;</span>
+<span class="fc" id="L26">    }</span>
 
     public int getNumerator() 
     {
-<span class="fc" id="L31">        return numerator;</span>
+<span class="fc" id="L30">        return numerator;</span>
     }
 
     public int getDenominator() 
     {
-<span class="fc" id="L36">        return denominator;</span>
+<span class="fc" id="L35">        return denominator;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
