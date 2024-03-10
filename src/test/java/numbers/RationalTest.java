@@ -41,13 +41,15 @@ public class RationalTest
     
     // Test for zero denominator
     @Test
-    public void shouldThrowExceptionForZeroDenominator() {
+    public void shouldThrowExceptionForZeroDenominator() 
+    {
         assertThrows(IllegalArgumentException.class, () -> new Rational(1, 0));
     }
     
     // Test for negative numerator
     @Test
-    public void negativeNumeratorShouldWorkCorrectly() {
+    public void negativeNumeratorShouldWorkCorrectly() 
+    {
         Rational value = new Rational(-2, 3);
         assertThat(value.getNumerator(), is(-2));
         assertThat(value.getDenominator(), is(3));
@@ -55,7 +57,8 @@ public class RationalTest
 
     // Test for negative denominator
     @Test
-    public void negativeDenominatorShouldWorkCorrectly() {
+    public void negativeDenominatorShouldWorkCorrectly() 
+    {
         Rational value = new Rational(2, -3);
         assertThat(value.getNumerator(), is(-2));
         assertThat(value.getDenominator(), is(3));
@@ -63,7 +66,8 @@ public class RationalTest
     
     // Test for both negative numerator and denominator
     @Test
-    public void bothNegativeShouldBePositive() {
+    public void bothNegativeShouldBePositive() 
+    {
         Rational value = new Rational(-2, -3);
         assertThat(value.getNumerator(), is(2));
         assertThat(value.getDenominator(), is(3));
@@ -71,7 +75,8 @@ public class RationalTest
     
     // Test for numerator greater than denominator
     @Test
-    public void numeratorGreaterThanDenominator() {
+    public void numeratorGreaterThanDenominator() 
+    {
         Rational value = new Rational(5, 3);
         assertThat(value.getNumerator(), is(5));
         assertThat(value.getDenominator(), is(3));
@@ -79,7 +84,8 @@ public class RationalTest
     
     // Test for numerator less than denominator
     @Test
-    public void numeratorLessThanDenominator() {
+    public void numeratorLessThanDenominator() 
+    {
         Rational value = new Rational(3, 5);
         assertThat(value.getNumerator(), is(3));
         assertThat(value.getDenominator(), is(5));
@@ -87,24 +93,19 @@ public class RationalTest
     
     // Test for numerator equal to denominator
     @Test
-    public void numeratorEqualToDenominator() {
+    public void numeratorEqualToDenominator() 
+    {
         Rational value = new Rational(3, 3);
         assertThat(value.getNumerator(), is(1));
         assertThat(value.getDenominator(), is(1));
     }
     
     @Test
-    public void copyConstructorTest() {
-        // Given I have created the Rational value 2/3
+    public void copyConstructorTest() 
+    {
         Rational original = new Rational(2, 3);
-
-        // When I create a Rational value as a copy of the original Rational value
         Rational copy = new Rational(original);
-
-        // Then the copy’s value should have numerator 2
         assertThat("The copy's numerator is 2", copy.getNumerator(), is(2));
-
-        // And the copy’s value should have denominator 3
         assertThat("The copy's denominator is 3", copy.getDenominator(), is(3));
     }
     
@@ -115,5 +116,23 @@ public class RationalTest
     	Rational opposite = value.opposite();
     	assertThat("the opposite of 2 is -2", opposite.getNumerator(), is(-2));
     	assertThat("the denominator should be 3", opposite.getDenominator(), is(3));
+    }
+    
+    // Happy Test Path
+    @Test
+    public void reciprocalOfRational()
+    {
+    	Rational value = new Rational(2,3);
+    	Rational reciprocal = value.reciprocal();
+    	assertThat("The numerator is 3", reciprocal.getNumerator(), is(3));
+    	assertThat("The denominator is 2", reciprocal.getDenominator(), is(2));
+    }
+    
+    // Sad Test Path
+    @Test
+    public void reciprocalThrowsException()
+    {
+    	Rational value = new Rational(0,1);
+    	assertThrows(IllegalArgumentException.class, value::reciprocal);
     }
 }

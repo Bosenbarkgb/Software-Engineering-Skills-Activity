@@ -65,4 +65,13 @@ public class Rational
     {
     	return new Rational(-this.numerator, this.denominator);
     }
+    
+    public Rational reciprocal()
+    {
+    	if (this.numerator == 0)
+    	{
+    		throw new IllegalArgumentException("Can't get the reciprocal of 0");
+    	}
+    	return new Rational(this.denominator, this.numerator);
+    }
 }

@@ -65,5 +65,14 @@ public class Rational
     {
 <span class="fc" id="L66">    	return new Rational(-this.numerator, this.denominator);</span>
     }
+    
+    public Rational reciprocal()
+    {
+<span class="fc bfc" id="L71" title="All 2 branches covered.">    	if (this.numerator == 0)</span>
+    	{
+<span class="fc" id="L73">    		throw new IllegalArgumentException(&quot;Can't get the reciprocal of 0&quot;);</span>
+    	}
+<span class="fc" id="L75">    	return new Rational(this.denominator, this.numerator);</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
