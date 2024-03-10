@@ -142,7 +142,7 @@ public class RationalTest {
    * Verifies that {@code intValue()} returns the correct integer representation for whole numbers.
    */
   @Test
-  public void intValueWithWholeNumber() {
+  public void intValueFractionToWholeNumber() {
     Rational rational = new Rational(5, 1); // Represents 5
     assertEquals(5, rational.intValue(), "intValue should return 5 for 5/1");
   }
@@ -151,7 +151,7 @@ public class RationalTest {
    * Tests that {@code intValue()} correctly truncates towards zero for fractions.
    */
   @Test
-  public void intValueWithFractionTruncatingTowardsZero() {
+  public void intValueTruncatesTowardsZero() {
     Rational rational = new Rational(1, 2); // Represents 0.5
     assertEquals(
       0,
@@ -164,7 +164,7 @@ public class RationalTest {
    * Ensures that {@code intValue()} correctly handles negative whole numbers.
    */
   @Test
-  public void intValueWithNegativeWholeNumber() {
+  public void intValueNegativeFractionToWholeNumber() {
     Rational rational = new Rational(-4, 1); // Represents -4
     assertEquals(-4, rational.intValue(), "intValue should return -4 for -4/1");
   }
@@ -173,7 +173,7 @@ public class RationalTest {
    * Verifies that {@code intValue()} properly truncates negative fractions towards zero.
    */
   @Test
-  public void intValueWithNegativeFractionTruncatingTowardsZero() {
+  public void intValueNegativeTruncatesTowardsZero() {
     Rational rational = new Rational(-3, 2); // Represents -1.5
     assertEquals(
       -1,
@@ -186,7 +186,7 @@ public class RationalTest {
    * Tests that {@code intValue()} can handle large numerators correctly.
    */
   @Test
-  public void intValueWithLargeNumerator() {
+  public void intValueLargeNumerator() {
     Rational rational = new Rational(1000, 1); // Represents 1000
     assertEquals(
       1000,
@@ -199,7 +199,7 @@ public class RationalTest {
    * Ensures that {@code intValue()} returns zero for small fractions, implementing truncation towards zero.
    */
   @Test
-  public void intValueWithSmallFraction() {
+  public void intValueSmallNumerator() {
     Rational rational = new Rational(1, 1000); // Represents 0.001
     assertEquals(
       0,
@@ -213,7 +213,7 @@ public class RationalTest {
    * Verifies that {@code longValue()} returns the correct long representation for whole numbers.
    */
   @Test
-  public void longValueWithWholeNumber() {
+  public void longValueFractionToWholeNumber() {
     Rational rational = new Rational(5, 1); // Represents 5
     assertEquals(5L, rational.longValue(), "longValue should return 5 for 5/1");
   }
@@ -222,7 +222,7 @@ public class RationalTest {
    * Tests that {@code longValue()} correctly truncates towards zero for fractions.
    */
   @Test
-  public void longValueWithFractionTruncatingTowardsZero() {
+  public void longValueTruncatesTowardsZero() {
     Rational rational = new Rational(1, 2); // Represents 0.5
     assertEquals(
       0L,
@@ -235,7 +235,7 @@ public class RationalTest {
    * Ensures that {@code longValue()} correctly handles negative whole numbers.
    */
   @Test
-  public void longValueWithNegativeWholeNumber() {
+  public void longValueNegativeFractionToWholeNumber() {
     Rational rational = new Rational(-4, 1); // Represents -4
     assertEquals(
       -4L,
@@ -248,7 +248,7 @@ public class RationalTest {
    * Verifies that {@code longValue()} properly truncates negative fractions towards zero.
    */
   @Test
-  public void longValueWithNegativeFractionTruncatingTowardsZero() {
+  public void longValueNegativeTruncatesTowardsZero() {
     Rational rational = new Rational(-3, 2); // Represents -1.5
     assertEquals(
       -1L,
@@ -261,7 +261,7 @@ public class RationalTest {
    * Tests that {@code longValue()} can handle large numerators correctly and represent them as long values.
    */
   @Test
-  public void longValueWithLargeNumerator() {
+  public void longValueLargeNumerator() {
     Rational rational = new Rational(Integer.MAX_VALUE, 1); // Represents a large whole number
     assertEquals(
       (long) Integer.MAX_VALUE,
@@ -275,7 +275,7 @@ public class RationalTest {
    * Tests the floatValue method with a whole number, expecting the exact float representation.
    */
   @Test
-  public void floatValueWithWholeNumber() {
+  public void floatValueFractionToWholeNumber() {
     Rational rational = new Rational(5, 1); // Represents 5
     assertEquals(
       5.0f,
@@ -289,7 +289,7 @@ public class RationalTest {
    * Tests the floatValue method with a simple fraction, expecting an accurate float approximation.
    */
   @Test
-  public void floatValueWithFraction() {
+  public void floatValueFractionToDecimal() {
     Rational rational = new Rational(1, 2); // Represents 0.5
     assertEquals(
       0.5f,
@@ -303,7 +303,7 @@ public class RationalTest {
    * Tests the floatValue method with a negative whole number, expecting the exact negative float representation.
    */
   @Test
-  public void floatValueWithNegativeWholeNumber() {
+  public void floatValueNegativeFractionToWholeNumber() {
     Rational rational = new Rational(-4, 1); // Represents -4
     assertEquals(
       -4.0f,
@@ -317,7 +317,7 @@ public class RationalTest {
    * Tests the floatValue method with a negative fraction, expecting an accurate negative float approximation.
    */
   @Test
-  public void floatValueWithNegativeFraction() {
+  public void floatValueNegativeFractionToDecimal() {
     Rational rational = new Rational(-3, 2); // Represents -1.5
     assertEquals(
       -1.5f,
@@ -331,7 +331,7 @@ public class RationalTest {
    * Tests the floatValue method with a very small fraction, expecting a positive float value close to zero.
    */
   @Test
-  public void floatValueWithSmallFraction() {
+  public void floatValueSmallNumerator() {
     Rational rational = new Rational(1, Integer.MAX_VALUE); // Represents a very small fraction
     assertTrue(
       rational.floatValue() > 0,
@@ -343,7 +343,7 @@ public class RationalTest {
    * Tests the floatValue method with large numerator and denominator values, expecting an approximation close to 1.0.
    */
   @Test
-  public void floatValueWithVeryLargeNumeratorAndDenominator() {
+  public void floatValueLargeNumeratorAndDenominator() {
     // Test with large values to check for precision
     Rational rational = new Rational(Integer.MAX_VALUE, Integer.MAX_VALUE - 1); // Represents a fraction close to 1
     assertEquals(
@@ -358,7 +358,7 @@ public class RationalTest {
    * Tests the floatValue method with an irreducible fraction, expecting an accurate approximation of PI.
    */
   @Test
-  public void floatValueWithIrreducibleFraction() {
+  public void floatValueIrreducibleFraction() {
     Rational rational = new Rational(22, 7); // An approximation of PI
     assertEquals(
       22.0f / 7.0f,
@@ -372,7 +372,7 @@ public class RationalTest {
    * Tests the floatValue method with a large fraction, expecting a significant positive float value.
    */
   @Test
-  public void floatValueWithLargeFraction() {
+  public void floatValueLargeNumerator() {
     Rational rational = new Rational(Integer.MAX_VALUE, 2); // Represents a large fraction
     assertTrue(
       rational.floatValue() > 0,
@@ -385,7 +385,7 @@ public class RationalTest {
    * Tests the doubleValue method with a whole number, expecting the exact double representation.
    */
   @Test
-  public void doubleValueWithWholeNumber() {
+  public void doubleValueFractionToWholeNumber() {
     Rational rational = new Rational(5, 1); // Represents 5
     assertEquals(
       5.0,
@@ -399,7 +399,7 @@ public class RationalTest {
    * Tests the doubleValue method with a simple fraction, expecting an accurate double approximation.
    */
   @Test
-  public void doubleValueWithFraction() {
+  public void doubleValueFractionToDecimal() {
     Rational rational = new Rational(1, 2); // Represents 0.5
     assertEquals(
       0.5,
@@ -413,7 +413,7 @@ public class RationalTest {
    * Tests the doubleValue method with a negative whole number, expecting the exact negative double representation.
    */
   @Test
-  public void doubleValueWithNegativeWholeNumber() {
+  public void doubleValueNegativeFractionToWholeNumber() {
     Rational rational = new Rational(-4, 1); // Represents -4
     assertEquals(
       -4.0,
@@ -427,7 +427,7 @@ public class RationalTest {
    * Tests the doubleValue method with a negative fraction, expecting an accurate negative double approximation.
    */
   @Test
-  public void doubleValueWithNegativeFraction() {
+  public void doubleValueNegativeFractionToDecimal() {
     Rational rational = new Rational(-3, 2); // Represents -1.5
     assertEquals(
       -1.5,
@@ -441,7 +441,7 @@ public class RationalTest {
    * Tests the doubleValue method with a very small fraction, expecting a positive double value close to zero.
    */
   @Test
-  public void doubleValueWithSmallFraction() {
+  public void doubleValueSmallNumerator() {
     Rational rational = new Rational(1, Integer.MAX_VALUE); // Represents a very small fraction
     assertTrue(
       rational.doubleValue() > 0,
@@ -453,7 +453,7 @@ public class RationalTest {
    * Tests the doubleValue method with large numerator and denominator values, expecting an approximation close to 1.0.
    */
   @Test
-  public void doubleValueWithVeryLargeNumeratorAndDenominator() {
+  public void doubleValueLargeNumeratorAndDenominator() {
     Rational rational = new Rational(Integer.MAX_VALUE, Integer.MAX_VALUE - 1); // Represents a fraction close to 1
     assertEquals(
       1.0,
@@ -467,7 +467,7 @@ public class RationalTest {
    * Tests the doubleValue method with an irreducible fraction, expecting an accurate approximation of PI.
    */
   @Test
-  public void doubleValueWithIrreducibleFraction() {
+  public void doubleValueIrreducibleFraction() {
     Rational rational = new Rational(22, 7); // An approximation of PI
     assertEquals(
       22.0 / 7.0,
@@ -478,29 +478,17 @@ public class RationalTest {
   }
 
   /**
-   * Tests the doubleValue method with a very small fraction, expecting a positive double value close to zero.
-   */
-  @Test
-  public void doubleValueWithVerySmallFraction() {
-    Rational rational = new Rational(1, Integer.MAX_VALUE); // Represents a very small fraction
-    assertTrue(
-      rational.doubleValue() > 0,
-      "doubleValue should return a very small positive value for 1/Integer.MAX_VALUE"
-    );
-  }
-
-  /**
    * Tests the doubleValue method with a large fraction, expecting a significant positive double value.
    */
   @Test
-  public void doubleValueWithLargeFraction() {
+  public void doubleValueLargeNumerator() {
     Rational rational = new Rational(Integer.MAX_VALUE, 2); // Represents a large fraction
     assertTrue(
       rational.doubleValue() > 0,
       "doubleValue should return a large positive value for Integer.MAX_VALUE/2"
     );
   }
-
+  
   // Tests for opposite
   /**
    * Tests the opposite method to ensure it correctly returns the additive inverse of a positive rational number.
@@ -591,7 +579,7 @@ public class RationalTest {
    * Verifies that the times method correctly multiplies two rational numbers together.
    */
   @Test
-  public void timesShouldMultiplyRationalsCorrectly() {
+  public void timesMultipliesRationals() {
     // Given we have Rationals representing 2/3 and 5/7
     Rational p = new Rational(2, 3);
     Rational r = new Rational(5, 7);
@@ -644,21 +632,12 @@ public class RationalTest {
     );
   }
 
-  /**
-   * Tests the doubleValue method to ensure it returns the correct double approximation for a rational number.
-   */
-  @Test
-  public void shouldCorrectlyConvertToDouble() {
-    Rational rational = new Rational(1, 2); // 0.5
-    assertThat(rational.doubleValue(), is(0.5));
-  }
-
   // Tests for plus
   /**
    * Tests the addition of two rational numbers, expecting their correct summation.
    */
   @Test
-  public void plusShouldSumRationalsCorrectly() {
+  public void plusSumsRationals() {
     Rational a = new Rational(1, 2); // 1/2
     Rational b = new Rational(1, 3); // 1/3
     Rational sum = a.plus(b); // Expected: 5/6
@@ -670,7 +649,7 @@ public class RationalTest {
    * Tests that adding a number and its additive inverse results in zero.
    */
   @Test
-  public void addingOppositeNumbersShouldResultInZero() {
+  public void addOppositeNumbersEqualsZero() {
     Rational number = new Rational(3, 4);
     Rational oppositeNumber = new Rational(-3, 4);
     Rational result = number.plus(oppositeNumber);
@@ -685,7 +664,7 @@ public class RationalTest {
    * Tests that adding zero to a rational number does not change its value.
    */
   @Test
-  public void addingZeroHasNoEffect() {
+  public void addZeroHasNoEffect() {
     Rational number = new Rational(3, 4);
     Rational zero = new Rational(0, 1);
     Rational result = number.plus(zero);
@@ -705,7 +684,7 @@ public class RationalTest {
    * Tests the addition of two negative rational numbers.
    */
   @Test
-  public void addingNegativeRationals() {
+  public void addNegativeRationals() {
     Rational negativeOne = new Rational(-1, 4);
     Rational negativeTwo = new Rational(-1, 2);
     Rational result = negativeOne.plus(negativeTwo);
@@ -752,7 +731,7 @@ public class RationalTest {
    * Tests comparing a rational number with another rational number that has a smaller value.
    */
   @Test
-  public void compareToWithRationalGreater() {
+  public void compareToRationalGreater() {
     Rational rational = new Rational(3, 2); // 1.5
     Rational other = new Rational(1, 2); // 0.5
     assertTrue(
@@ -765,7 +744,7 @@ public class RationalTest {
    * Tests comparing a rational number with another rational number that has a greater value.
    */
   @Test
-  public void compareToWithRationalLess() {
+  public void compareToRationalLess() {
     Rational rational = new Rational(1, 4); // 0.25
     Rational other = new Rational(1, 2); // 0.5
     assertTrue(
@@ -778,7 +757,7 @@ public class RationalTest {
    * Tests comparing two equal rational numbers.
    */
   @Test
-  public void compareToWithRationalEqual() {
+  public void compareToRationalEqual() {
     Rational rational = new Rational(2, 3);
     Rational other = new Rational(2, 3);
     assertEquals(
@@ -792,7 +771,7 @@ public class RationalTest {
    * Tests comparing a rational number with an integer that has a smaller value.
    */
   @Test
-  public void compareToWithIntegerGreater() {
+  public void compareToIntegerGreater() {
     Rational rational = new Rational(5, 1); // 5
     Integer other = 4;
     assertTrue(
@@ -805,7 +784,7 @@ public class RationalTest {
    * Tests comparing a rational number with an integer that has a greater value.
    */
   @Test
-  public void compareToWithIntegerLess() {
+  public void compareToIntegerLess() {
     Rational rational = new Rational(2, 1); // 2
     Integer other = 3;
     assertTrue(
@@ -818,7 +797,7 @@ public class RationalTest {
    * Tests comparing a rational number with a double that has a smaller value.
    */
   @Test
-  public void compareToWithDoubleGreater() {
+  public void compareToDoubleGreater() {
     Rational rational = new Rational(7, 4); // 1.75
     Double other = 1.5;
     assertTrue(
@@ -831,7 +810,7 @@ public class RationalTest {
    * Tests comparing a rational number with a double that has a greater value.
    */
   @Test
-  public void compareToWithDoubleLess() {
+  public void compareToDoubleLess() {
     Rational rational = new Rational(1, 2); // 0.5
     Double other = 0.75;
     assertTrue(
@@ -844,7 +823,7 @@ public class RationalTest {
    * Tests comparing a rational number with a float that has an equal value.
    */
   @Test
-  public void compareToWithFloatEqual() {
+  public void compareToFloatEqual() {
     Rational rational = new Rational(10, 1); // 10
     Float other = 10.0f;
     assertEquals(
@@ -858,7 +837,7 @@ public class RationalTest {
    * Tests comparing a rational number with a long that has a smaller value.
    */
   @Test
-  public void compareToWithLongGreater() {
+  public void compareToLongGreater() {
     Rational rational = new Rational(100, 1); // 100
     Long other = 99L;
     assertTrue(
@@ -871,7 +850,7 @@ public class RationalTest {
    * Tests comparing a rational number with a long that has a greater value.
    */
   @Test
-  public void compareToWithLongLess() {
+  public void compareToLongLess() {
     Rational rational = new Rational(50, 1); // 50
     Long other = 60L;
     assertTrue(
@@ -908,7 +887,7 @@ public class RationalTest {
    * Tests that subtracting a number from itself results in zero.
    */
   @Test
-  public void subtractingSameNumbersShouldResultInZero() {
+  public void subtractSameNumbersEqualsZero() {
     Rational number = new Rational(5, 6);
     Rational result = number.minus(number);
     assertThat(
@@ -922,7 +901,7 @@ public class RationalTest {
    * Tests that the result of subtraction is correctly simplified.
    */
   @Test
-  public void subtractionResultingInSimplification() {
+  public void subtractAndSimplify() {
     Rational a = new Rational(1, 2);
     Rational b = new Rational(1, 4);
     Rational result = a.minus(b);
@@ -968,7 +947,7 @@ public class RationalTest {
    * Tests the division of a positive rational number by a negative rational number.
    */
   @Test
-  public void divisionByNegativeRational() {
+  public void dividesByNegativeRational() {
     Rational dividend = new Rational(1, 2);
     Rational divisor = new Rational(-1, 4);
     Rational result = dividend.dividesBy(divisor);
@@ -988,7 +967,7 @@ public class RationalTest {
    * Tests the division of two negative rational numbers.
    */
   @Test
-  public void divisionOfTwoNegativeRationals() {
+  public void dividesByTwoNegativeRationals() {
     Rational dividend = new Rational(-1, 3);
     Rational divisor = new Rational(-2, 6);
     Rational result = dividend.dividesBy(divisor);
@@ -1008,7 +987,7 @@ public class RationalTest {
    * Tests the division by a zero rational number, expecting an exception.
    */
   @Test
-  public void divisionByZeroRational() {
+  public void dividesByZeroRational() {
     Rational dividend = new Rational(1, 2);
     Rational zeroDivisor = new Rational(0, 1);
     assertThrows(
@@ -1084,7 +1063,7 @@ public class RationalTest {
    * Tests raising any rational number to the zero power, which should always result in 1.
    */
   @Test
-  public void raisingAnyRationalToZeroPower() {
+  public void raisedToThePowerOfRationalToZeroPower() {
     Rational rational = new Rational(3, 4);
     Rational result = rational.raisedToThePowerOf(0);
     assertThat(
@@ -1103,7 +1082,7 @@ public class RationalTest {
    * Tests raising a negative rational number to both even and odd powers.
    */
   @Test
-  public void raisingNegativeRationalToPositivePower() {
+  public void raisedToThePowerOfNegativeRationalToPositivePower() {
     Rational negativeRational = new Rational(-2, 3);
     Rational evenPowerResult = negativeRational.raisedToThePowerOf(2);
     Rational oddPowerResult = negativeRational.raisedToThePowerOf(3);
@@ -1124,7 +1103,7 @@ public class RationalTest {
    * Tests raising a rational number to a large positive power.
    */
   @Test
-  public void raisingToLargePositivePower() {
+  public void raisedToThePowerOfLargePositivePower() {
     Rational rational = new Rational(2, 3);
     Rational result = rational.raisedToThePowerOf(4); // Should be 16/81
     assertThat(
@@ -1143,7 +1122,7 @@ public class RationalTest {
    * Tests raising a rational number to a large negative power.
    */
   @Test
-  public void raisingToLargeNegativePower() {
+  public void raisedToThePowerOfLargeNegativePower() {
     Rational rational = new Rational(2, 3);
     Rational result = rational.raisedToThePowerOf(-4); // Should be 81/16
     assertThat(
@@ -1227,7 +1206,7 @@ public class RationalTest {
    * Tests if a rational number is greater than an integer value.
    */
   @Test
-  public void greaterThanNumberWithInteger() {
+  public void greaterThanNumberInteger() {
     Rational rational = new Rational(5, 2); // 2.5
     Integer number = 2;
     assertTrue(rational.greaterThan(number), "5/2 should be greater than 2");
@@ -1237,7 +1216,7 @@ public class RationalTest {
    * Tests if a rational number is greater than a double value.
    */
   @Test
-  public void greaterThanNumberWithDouble() {
+  public void greaterThanNumberDouble() {
     Rational rational = new Rational(3, 2); // 1.5
     Double number = 1.4;
     assertTrue(rational.greaterThan(number), "3/2 should be greater than 1.4");
@@ -1247,7 +1226,7 @@ public class RationalTest {
    * Tests if a rational number is greater than a smaller rational number.
    */
   @Test
-  public void greaterThanNumberWithSmallerRational() {
+  public void greaterThanNumberSmallerRational() {
     Rational rational = new Rational(3, 2); // 1.5
     Rational smallerRational = new Rational(1, 2); // 0.5
     assertTrue(
@@ -1260,7 +1239,7 @@ public class RationalTest {
    * Tests if a rational number is not greater than a larger double value.
    */
   @Test
-  public void greaterThanNumberWithGreaterDouble() {
+  public void greaterThanNumberGreaterDouble() {
     Rational rational = new Rational(1, 2); // 0.5
     Double number = 0.6;
     assertFalse(
@@ -1391,7 +1370,7 @@ public class RationalTest {
    * Examines the comparison of a rational number to zero, verifying correct behavior.
    */
   @Test
-  public void greaterThanWithZero() {
+  public void greaterThanZero() {
     Rational rational = new Rational(0, 1); // 0
     assertFalse(rational.greaterThan(0), "0 should not be greater than 0");
     assertTrue(
@@ -1404,7 +1383,7 @@ public class RationalTest {
    * Checks the behavior of comparing a negative rational number to other negative and zero values.
    */
   @Test
-  public void greaterThanWithNegativeNumber() {
+  public void greaterThanNegativeNumber() {
     Rational rational = new Rational(-1, 2); // -0.5
     assertFalse(
       rational.greaterThan(-0.25),
@@ -1418,7 +1397,7 @@ public class RationalTest {
    * Verifies that a smaller rational number is considered less than a larger rational number.
    */
   @Test
-  public void lessThanWithCurrentValueLessThanR() {
+  public void lessThanCurrentValueLessThanR() {
     Rational currentValue = new Rational(1, 4);
     Rational comparedValue = new Rational(1, 2);
     assertTrue(currentValue.lessThan(comparedValue), "1/4 is less than 1/2");
@@ -1428,7 +1407,7 @@ public class RationalTest {
    * Checks that a larger rational number is not considered less than a smaller rational number.
    */
   @Test
-  public void lessThanWithCurrentValueGreaterThanR() {
+  public void lessThanCurrentValueGreaterThanR() {
     Rational currentValue = new Rational(3, 4);
     Rational comparedValue = new Rational(1, 2);
     assertFalse(
@@ -1441,7 +1420,7 @@ public class RationalTest {
    * Tests that equal rational numbers are not considered less than each other.
    */
   @Test
-  public void lessThanWithEqualValues() {
+  public void lessThanEqualValues() {
     Rational currentValue = new Rational(2, 3);
     Rational comparedValue = new Rational(2, 3);
     assertFalse(
@@ -1454,7 +1433,7 @@ public class RationalTest {
    * Tests comparison behavior when both rational numbers are negative and the current value is greater.
    */
   @Test
-  public void lessThanWithBothValuesNegativeAndCurrentValueGreater() {
+  public void lessThanBothValuesNegativeAndCurrentValueGreater() {
     Rational currentValue = new Rational(-1, 4); // -1/4
     Rational comparedValue = new Rational(-1, 2); // -1/2
     assertFalse(
@@ -1467,7 +1446,7 @@ public class RationalTest {
    * Verifies that zero is considered less than any positive rational number.
    */
   @Test
-  public void lessThanWithZeroCurrentValue() {
+  public void lessThanZeroCurrentValue() {
     Rational currentValue = new Rational(0, 1); // 0
     Rational comparedValue = new Rational(1, 2); // 1/2
     assertTrue(
@@ -1480,7 +1459,7 @@ public class RationalTest {
    * Tests that any positive rational number is not considered less than zero.
    */
   @Test
-  public void lessThanWithZeroComparedValue() {
+  public void lessThanZeroComparedValue() {
     Rational currentValue = new Rational(1, 2); // 1/2
     Rational comparedValue = new Rational(0, 1); // 0
     assertFalse(currentValue.lessThan(comparedValue), "1/2 is not less than 0");
@@ -1491,7 +1470,7 @@ public class RationalTest {
    * Confirms that a rational number representing zero is correctly identified as zero.
    */
   @Test
-  public void isZeroWithZeroValue() {
+  public void isZeroZeroValue() {
     Rational zeroValue = new Rational(0, 1); // Represents 0
     assertTrue(zeroValue.isZero(), "0/1 should be considered as zero");
   }
@@ -1500,7 +1479,7 @@ public class RationalTest {
    * Ensures that a positive rational number is not incorrectly identified as zero.
    */
   @Test
-  public void isZeroWithPositiveNumerator() {
+  public void isZeroPositiveNumerator() {
     Rational positiveValue = new Rational(1, 2); // Represents 1/2
     assertFalse(positiveValue.isZero(), "1/2 should not be considered as zero");
   }
@@ -1509,7 +1488,7 @@ public class RationalTest {
    * Checks that a negative rational number is not mistakenly considered as zero.
    */
   @Test
-  public void isZeroWithNegativeNumerator() {
+  public void isZeroNegativeNumerator() {
     Rational negativeValue = new Rational(-1, 2); // Represents -1/2
     assertFalse(
       negativeValue.isZero(),
@@ -1522,7 +1501,7 @@ public class RationalTest {
    * Verifies the identification of a rational number representing one.
    */
   @Test
-  public void isOneWithCanonicalOneValue() {
+  public void isOneCanonicalOneValue() {
     Rational oneValue = new Rational(1, 1); // Represents 1
     assertTrue(oneValue.isOne(), "1/1 should be considered as one");
 
@@ -1540,7 +1519,7 @@ public class RationalTest {
    * Tests that zero is not incorrectly identified as one.
    */
   @Test
-  public void isOneWithZeroValue() {
+  public void isOneZeroValue() {
     Rational zeroValue = new Rational(0, 1); // Represents 0
     assertFalse(zeroValue.isOne(), "0/1 should not be considered as one");
   }
@@ -1549,7 +1528,7 @@ public class RationalTest {
    * Confirms that rational numbers not equivalent to one are correctly not identified as one.
    */
   @Test
-  public void isOneWithNonCanonicalOneValue() {
+  public void isOneNonCanonicalOneValue() {
     Rational nonOneValue = new Rational(1, 2); // Represents 1/2
     assertFalse(nonOneValue.isOne(), "1/2 should not be considered as one");
 
@@ -1565,7 +1544,7 @@ public class RationalTest {
    * Tests for correct identification of a rational number representing minus one.
    */
   @Test
-  public void isMinusOneWithCanonicalMinusOneValue() {
+  public void isMinusOneCanonicalMinusOneValue() {
     Rational minusOneValue = new Rational(-1, 1); // Represents -1
     assertTrue(
       minusOneValue.isMinusOne(),
@@ -1583,7 +1562,7 @@ public class RationalTest {
    * Ensures zero is not incorrectly identified as minus one.
    */
   @Test
-  public void isMinusOneWithZeroValue() {
+  public void isMinusOneZeroValue() {
     Rational zeroValue = new Rational(0, 1); // Represents 0
     assertFalse(
       zeroValue.isMinusOne(),
@@ -1595,7 +1574,7 @@ public class RationalTest {
    * Checks that rational numbers not equivalent to minus one are not mistakenly identified as such.
    */
   @Test
-  public void isMinusOneWithNonCanonicalMinusOneValue() {
+  public void isMinusOneNonCanonicalMinusOneValue() {
     Rational nonMinusOneValue = new Rational(-1, 2); // Represents -1/2
     assertFalse(
       nonMinusOneValue.isMinusOne(),
@@ -1614,7 +1593,7 @@ public class RationalTest {
    * Tests the string representation of a rational number as a whole number.
    */
   @Test
-  public void toStringWithWholeNumber() {
+  public void toStringWholeNumber() {
     Rational wholeNumber = new Rational(7, 1);
     assertEquals(
       "7",
@@ -1627,7 +1606,7 @@ public class RationalTest {
    * Tests the string representation of a standard fractional rational number.
    */
   @Test
-  public void toStringWithFraction() {
+  public void toStringFraction() {
     Rational fractionalNumber = new Rational(1, 2);
     assertEquals(
       "1/2",
@@ -1640,7 +1619,7 @@ public class RationalTest {
    * Verifies the string representation of a negative fractional rational number.
    */
   @Test
-  public void toStringWithNegativeFraction() {
+  public void toStringNegativeFraction() {
     Rational negativeFraction = new Rational(-1, 2);
     assertEquals(
       "-1/2",

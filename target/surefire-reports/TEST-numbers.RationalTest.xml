@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="numbers.RationalTest" time="0.115" tests="120" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="numbers.RationalTest" time="0.12" tests="118" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.8.v20230831-1047\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\boseg\AppData\Local\Temp\surefire71656991460318317\surefirebooter4697883740010801428.jar C:\Users\boseg\AppData\Local\Temp\surefire71656991460318317 2024-03-10T03-23-46_246-jvmRun1 surefire15018526636747954316tmp surefire_04484786165011472930tmp"/>
+    <property name="sun.java.command" value="C:\Users\boseg\AppData\Local\Temp\surefire10355823052145819300\surefirebooter11930419300924426376.jar C:\Users\boseg\AppData\Local\Temp\surefire10355823052145819300 2024-03-10T16-58-51_109-jvmRun1 surefire842826824287948186tmp surefire_012088430692493684050tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\boseg\eclipse-workspace\activity\target\test-classes;C:\Users\boseg\eclipse-workspace\activity\target\classes;C:\Users\boseg\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.7.0\junit-jupiter-api-5.7.0.jar;C:\Users\boseg\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\boseg\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\boseg\.m2\repository\org\junit\platform\junit-platform-commons\1.7.0\junit-platform-commons-1.7.0.jar;C:\Users\boseg\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.7.0\junit-jupiter-engine-5.7.0.jar;C:\Users\boseg\.m2\repository\org\junit\platform\junit-platform-engine\1.7.0\junit-platform-engine-1.7.0.jar;C:\Users\boseg\.m2\repository\org\hamcrest\hamcrest-all\1.3\hamcrest-all-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\boseg\AppData\Local\Temp\surefire71656991460318317\surefirebooter4697883740010801428.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\boseg\AppData\Local\Temp\surefire10355823052145819300\surefirebooter11930419300924426376.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.8.1+1"/>
@@ -58,124 +58,122 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="doubleValueWithVeryLargeNumeratorAndDenominator" classname="numbers.RationalTest" time="0.031"/>
-  <testcase name="numeratorLessThanDenominator" classname="numbers.RationalTest" time="0.006"/>
-  <testcase name="isOneWithZeroValue" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="compareToWithIntegerLess" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="doubleValueWithNegativeWholeNumber" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="compareToWithRationalEqual" classname="numbers.RationalTest" time="0"/>
-  <testcase name="equalsReturnsTrueFloat" classname="numbers.RationalTest" time="0.002"/>
+  <testcase name="lessThanZeroCurrentValue" classname="numbers.RationalTest" time="0.031"/>
+  <testcase name="compareToIntegerLess" classname="numbers.RationalTest" time="0"/>
+  <testcase name="plusSumsRationals" classname="numbers.RationalTest" time="0.009"/>
+  <testcase name="numeratorLessThanDenominator" classname="numbers.RationalTest" time="0"/>
+  <testcase name="equalsReturnsTrueFloat" classname="numbers.RationalTest" time="0"/>
   <testcase name="reciprocalOfRational" classname="numbers.RationalTest" time="0"/>
-  <testcase name="intValueWithLargeNumerator" classname="numbers.RationalTest" time="0"/>
+  <testcase name="isMinusOneZeroValue" classname="numbers.RationalTest" time="0.002"/>
   <testcase name="TwoParamTest" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="raisingToLargePositivePower" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="raisedToThePowerOfZero" classname="numbers.RationalTest" time="0.002"/>
-  <testcase name="doubleValueWithWholeNumber" classname="numbers.RationalTest" time="0"/>
-  <testcase name="toStringWithNegativeFraction" classname="numbers.RationalTest" time="0"/>
+  <testcase name="compareToRationalEqual" classname="numbers.RationalTest" time="0.002"/>
+  <testcase name="intValueNegativeFractionToWholeNumber" classname="numbers.RationalTest" time="0"/>
+  <testcase name="compareToLongLess" classname="numbers.RationalTest" time="0"/>
+  <testcase name="doubleValueSmallNumerator" classname="numbers.RationalTest" time="0"/>
+  <testcase name="compareToIntegerGreater" classname="numbers.RationalTest" time="0"/>
+  <testcase name="raisedToThePowerOfZero" classname="numbers.RationalTest" time="0.003"/>
   <testcase name="greaterThanReturnsTrueWithFloat" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="longValueWithWholeNumber" classname="numbers.RationalTest" time="0"/>
+  <testcase name="isZeroPositiveNumerator" classname="numbers.RationalTest" time="0"/>
   <testcase name="greaterThanReturnsTrueWhenCurrentIsGreater" classname="numbers.RationalTest" time="0"/>
-  <testcase name="raisingAnyRationalToZeroPower" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="isMinusOneCanonicalMinusOneValue" classname="numbers.RationalTest" time="0"/>
   <testcase name="equalsReturnsFalseFloat" classname="numbers.RationalTest" time="0"/>
-  <testcase name="isMinusOneWithCanonicalMinusOneValue" classname="numbers.RationalTest" time="0"/>
-  <testcase name="lessThanWithZeroCurrentValue" classname="numbers.RationalTest" time="0"/>
-  <testcase name="greaterThanWithZero" classname="numbers.RationalTest" time="0"/>
+  <testcase name="doubleValueLargeNumeratorAndDenominator" classname="numbers.RationalTest" time="0.002"/>
+  <testcase name="compareToRationalLess" classname="numbers.RationalTest" time="0.001"/>
   <testcase name="greaterThanReturnsFalseWhenCurrentIsNotGreater" classname="numbers.RationalTest" time="0"/>
-  <testcase name="greaterThanReturnsFalseForEqualValues" classname="numbers.RationalTest" time="0.003"/>
-  <testcase name="doubleValueWithIrreducibleFraction" classname="numbers.RationalTest" time="0"/>
-  <testcase name="longValueWithNegativeWholeNumber" classname="numbers.RationalTest" time="0"/>
-  <testcase name="doubleValueWithNegativeFraction" classname="numbers.RationalTest" time="0"/>
-  <testcase name="intValueWithFractionTruncatingTowardsZero" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="numeratorGreaterThanDenominator" classname="numbers.RationalTest" time="0"/>
-  <testcase name="compareToWithFloatEqual" classname="numbers.RationalTest" time="0"/>
-  <testcase name="greaterThanWithNegativeNumber" classname="numbers.RationalTest" time="0"/>
-  <testcase name="isMinusOneWithZeroValue" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="subtractionResultingInSimplification" classname="numbers.RationalTest" time="0.002"/>
-  <testcase name="raisingToLargeNegativePower" classname="numbers.RationalTest" time="0"/>
-  <testcase name="negativeNumeratorShouldWorkCorrectly" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="longValueWithNegativeFractionTruncatingTowardsZero" classname="numbers.RationalTest" time="0"/>
-  <testcase name="doubleValueWithSmallFraction" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="intValueWithNegativeWholeNumber" classname="numbers.RationalTest" time="0"/>
-  <testcase name="oppositeReturnsAdditiveInverseTest" classname="numbers.RationalTest" time="0"/>
-  <testcase name="intValueWithNegativeFractionTruncatingTowardsZero" classname="numbers.RationalTest" time="0"/>
-  <testcase name="compareToWithIntegerGreater" classname="numbers.RationalTest" time="0"/>
-  <testcase name="floatValueWithNegativeWholeNumber" classname="numbers.RationalTest" time="0"/>
-  <testcase name="raisedToThePowerOfPositive" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="longValueWithFractionTruncatingTowardsZero" classname="numbers.RationalTest" time="0"/>
-  <testcase name="bothNegativeShouldBePositive" classname="numbers.RationalTest" time="0"/>
-  <testcase name="divisionByNegativeRational" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="floatValueWithSmallFraction" classname="numbers.RationalTest" time="0"/>
-  <testcase name="floatValueWithNegativeFraction" classname="numbers.RationalTest" time="0"/>
-  <testcase name="compareToWithRationalLess" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="greaterThanReturnsFalseForEqualValues" classname="numbers.RationalTest" time="0"/>
+  <testcase name="isMinusOneNonCanonicalMinusOneValue" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="intValueLargeNumerator" classname="numbers.RationalTest" time="0"/>
+  <testcase name="subtractSameNumbersEqualsZero" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="numeratorGreaterThanDenominator" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="doubleValueIrreducibleFraction" classname="numbers.RationalTest" time="0"/>
+  <testcase name="doubleValueNegativeFractionToWholeNumber" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="longValueNegativeTruncatesTowardsZero" classname="numbers.RationalTest" time="0"/>
+  <testcase name="lessThanEqualValues" classname="numbers.RationalTest" time="0"/>
+  <testcase name="toStringNegativeFraction" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="greaterThanNumberInteger" classname="numbers.RationalTest" time="0"/>
+  <testcase name="dividesByZeroRational" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="compareToFloatEqual" classname="numbers.RationalTest" time="0"/>
+  <testcase name="negativeNumeratorShouldWorkCorrectly" classname="numbers.RationalTest" time="0"/>
+  <testcase name="isZeroZeroValue" classname="numbers.RationalTest" time="0"/>
+  <testcase name="oppositeReturnsAdditiveInverseTest" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="intValueNegativeTruncatesTowardsZero" classname="numbers.RationalTest" time="0"/>
+  <testcase name="greaterThanZero" classname="numbers.RationalTest" time="0"/>
+  <testcase name="longValueNegativeFractionToWholeNumber" classname="numbers.RationalTest" time="0"/>
+  <testcase name="doubleValueNegativeFractionToDecimal" classname="numbers.RationalTest" time="0"/>
+  <testcase name="lessThanZeroComparedValue" classname="numbers.RationalTest" time="0"/>
+  <testcase name="lessThanCurrentValueLessThanR" classname="numbers.RationalTest" time="0"/>
+  <testcase name="raisedToThePowerOfPositive" classname="numbers.RationalTest" time="0"/>
+  <testcase name="greaterThanNegativeNumber" classname="numbers.RationalTest" time="0"/>
+  <testcase name="isZeroNegativeNumerator" classname="numbers.RationalTest" time="0"/>
+  <testcase name="floatValueLargeNumerator" classname="numbers.RationalTest" time="0"/>
+  <testcase name="bothNegativeShouldBePositive" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="greaterThanNumberDouble" classname="numbers.RationalTest" time="0"/>
+  <testcase name="isOneZeroValue" classname="numbers.RationalTest" time="0"/>
   <testcase name="raisedToThePowerOfNegative" classname="numbers.RationalTest" time="0"/>
+  <testcase name="addOppositeNumbersEqualsZero" classname="numbers.RationalTest" time="0"/>
   <testcase name="equalsReturnsFalseDouble" classname="numbers.RationalTest" time="0"/>
-  <testcase name="greaterThanReturnsFalseWithInteger" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="toStringWithFraction" classname="numbers.RationalTest" time="0"/>
+  <testcase name="greaterThanReturnsFalseWithInteger" classname="numbers.RationalTest" time="0"/>
+  <testcase name="addNegativeRationals" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="intValueFractionToWholeNumber" classname="numbers.RationalTest" time="0"/>
   <testcase name="copyConstructorTest" classname="numbers.RationalTest" time="0"/>
   <testcase name="shouldThrowExceptionForZeroDenominator" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="addingZeroHasNoEffect" classname="numbers.RationalTest" time="0"/>
-  <testcase name="greaterThanNumberWithDouble" classname="numbers.RationalTest" time="0"/>
-  <testcase name="longValueWithLargeNumerator" classname="numbers.RationalTest" time="0"/>
-  <testcase name="equalsReturnsTrueRational" classname="numbers.RationalTest" time="0"/>
-  <testcase name="compareToWithLongLess" classname="numbers.RationalTest" time="0"/>
-  <testcase name="timesShouldMultiplyRationalsCorrectly" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="intValueWithSmallFraction" classname="numbers.RationalTest" time="0"/>
-  <testcase name="doubleValueWithLargeFraction" classname="numbers.RationalTest" time="0"/>
-  <testcase name="isMinusOneWithNonCanonicalMinusOneValue" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="compareToWithLongGreater" classname="numbers.RationalTest" time="0"/>
-  <testcase name="compareToWithRationalGreater" classname="numbers.RationalTest" time="0"/>
-  <testcase name="isOneWithNonCanonicalOneValue" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="doubleValueWithVerySmallFraction" classname="numbers.RationalTest" time="0"/>
-  <testcase name="floatValueWithIrreducibleFraction" classname="numbers.RationalTest" time="0"/>
-  <testcase name="isZeroWithPositiveNumerator" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="equalsReturnsTrueRational" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="compareToLongGreater" classname="numbers.RationalTest" time="0"/>
+  <testcase name="raisedToThePowerOfLargePositivePower" classname="numbers.RationalTest" time="0.003"/>
+  <testcase name="dividesByTwoNegativeRationals" classname="numbers.RationalTest" time="0"/>
+  <testcase name="dividesByNegativeRational" classname="numbers.RationalTest" time="0"/>
   <testcase name="equalsReturnFalseRational" classname="numbers.RationalTest" time="0"/>
-  <testcase name="shouldCorrectlyConvertToDouble" classname="numbers.RationalTest" time="0"/>
   <testcase name="greaterThanReturnsFalseWithDouble" classname="numbers.RationalTest" time="0"/>
-  <testcase name="addingOppositeNumbersShouldResultInZero" classname="numbers.RationalTest" time="0"/>
-  <testcase name="doubleValueWithFraction" classname="numbers.RationalTest" time="0"/>
-  <testcase name="floatValueWithWholeNumber" classname="numbers.RationalTest" time="0"/>
-  <testcase name="floatValueWithLargeFraction" classname="numbers.RationalTest" time="0"/>
-  <testcase name="compareToWithDoubleGreater" classname="numbers.RationalTest" time="0"/>
-  <testcase name="isOneWithCanonicalOneValue" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="addingNegativeRationals" classname="numbers.RationalTest" time="0"/>
-  <testcase name="greaterThanNumberWithSmallerRational" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="negativeDenominatorShouldWorkCorrectly" classname="numbers.RationalTest" time="0"/>
-  <testcase name="lessThanWithBothValuesNegativeAndCurrentValueGreater" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="greaterThanNumberWithInteger" classname="numbers.RationalTest" time="0"/>
-  <testcase name="floatValueWithVeryLargeNumeratorAndDenominator" classname="numbers.RationalTest" time="0"/>
+  <testcase name="lessThanCurrentValueGreaterThanR" classname="numbers.RationalTest" time="0"/>
+  <testcase name="raisedToThePowerOfRationalToZeroPower" classname="numbers.RationalTest" time="0"/>
+  <testcase name="raisedToThePowerOfNegativeRationalToPositivePower" classname="numbers.RationalTest" time="0"/>
+  <testcase name="floatValueLargeNumeratorAndDenominator" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="intValueSmallNumerator" classname="numbers.RationalTest" time="0"/>
+  <testcase name="compareToDoubleGreater" classname="numbers.RationalTest" time="0"/>
+  <testcase name="negativeDenominatorShouldWorkCorrectly" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="doubleValueLargeNumerator" classname="numbers.RationalTest" time="0"/>
+  <testcase name="compareToRationalGreater" classname="numbers.RationalTest" time="0"/>
+  <testcase name="floatValueIrreducibleFraction" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="isOneCanonicalOneValue" classname="numbers.RationalTest" time="0"/>
   <testcase name="greaterThanReturnsFalse" classname="numbers.RationalTest" time="0"/>
-  <testcase name="lessThanWithCurrentValueLessThanR" classname="numbers.RationalTest" time="0"/>
-  <testcase name="compareToWithDoubleLess" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="doubleValueFractionToWholeNumber" classname="numbers.RationalTest" time="0"/>
   <testcase name="oppositeOfNegativeRationalNumber" classname="numbers.RationalTest" time="0"/>
-  <testcase name="intValueWithWholeNumber" classname="numbers.RationalTest" time="0"/>
+  <testcase name="greaterThanNumberGreaterDouble" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="toStringFraction" classname="numbers.RationalTest" time="0.001"/>
   <testcase name="greaterThanReturnsFalseWithFloat" classname="numbers.RationalTest" time="0"/>
-  <testcase name="divisionByZeroRational" classname="numbers.RationalTest" time="0"/>
-  <testcase name="raisingNegativeRationalToPositivePower" classname="numbers.RationalTest" time="0"/>
+  <testcase name="isOneNonCanonicalOneValue" classname="numbers.RationalTest" time="0"/>
   <testcase name="oppositeOfZero" classname="numbers.RationalTest" time="0"/>
-  <testcase name="minusTest" classname="numbers.RationalTest" time="0"/>
+  <testcase name="raisedToThePowerOfLargeNegativePower" classname="numbers.RationalTest" time="0"/>
+  <testcase name="compareToDoubleLess" classname="numbers.RationalTest" time="0"/>
+  <testcase name="minusTest" classname="numbers.RationalTest" time="0.001"/>
   <testcase name="dividesByTest" classname="numbers.RationalTest" time="0"/>
+  <testcase name="doubleValueFractionToDecimal" classname="numbers.RationalTest" time="0"/>
   <testcase name="reciprocalThrowsException" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="lessThanWithEqualValues" classname="numbers.RationalTest" time="0"/>
-  <testcase name="isZeroWithZeroValue" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="subtractingSameNumbersShouldResultInZero" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="floatValueNegativeFractionToWholeNumber" classname="numbers.RationalTest" time="0"/>
+  <testcase name="greaterThanNumberSmallerRational" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="longValueFractionToWholeNumber" classname="numbers.RationalTest" time="0"/>
   <testcase name="compareToAnotherNumber" classname="numbers.RationalTest" time="0"/>
-  <testcase name="lessThanWithZeroComparedValue" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="greaterThanNumberWithGreaterDouble" classname="numbers.RationalTest" time="0"/>
+  <testcase name="timesMultipliesRationals" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="floatValueFractionToWholeNumber" classname="numbers.RationalTest" time="0"/>
   <testcase name="defaultConstructorShouldCreateZero" classname="numbers.RationalTest" time="0"/>
-  <testcase name="plusShouldSumRationalsCorrectly" classname="numbers.RationalTest" time="0"/>
-  <testcase name="isZeroWithNegativeNumerator" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="floatValueSmallNumerator" classname="numbers.RationalTest" time="0"/>
   <testcase name="greaterThanReturnsTrue" classname="numbers.RationalTest" time="0"/>
-  <testcase name="toStringWithWholeNumber" classname="numbers.RationalTest" time="0"/>
-  <testcase name="greaterThanReturnsTrueWithDouble" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="divisionOfTwoNegativeRationals" classname="numbers.RationalTest" time="0"/>
+  <testcase name="greaterThanReturnsTrueWithDouble" classname="numbers.RationalTest" time="0"/>
+  <testcase name="floatValueFractionToDecimal" classname="numbers.RationalTest" time="0.002"/>
   <testcase name="greaterThanReturnsTrueWithInteger" classname="numbers.RationalTest" time="0"/>
   <testcase name="timesByOne" classname="numbers.RationalTest" time="0"/>
-  <testcase name="floatValueWithFraction" classname="numbers.RationalTest" time="0"/>
+  <testcase name="toStringWholeNumber" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="longValueLargeNumerator" classname="numbers.RationalTest" time="0"/>
   <testcase name="timesWithZero" classname="numbers.RationalTest" time="0.001"/>
-  <testcase name="numeratorAsSingleParamTest" classname="numbers.RationalTest" time="0"/>
-  <testcase name="lessThanWithCurrentValueGreaterThanR" classname="numbers.RationalTest" time="0"/>
+  <testcase name="numeratorAsSingleParamTest" classname="numbers.RationalTest" time="0.001"/>
   <testcase name="equalsReturnsTrueDouble" classname="numbers.RationalTest" time="0"/>
-  <testcase name="resultSimplification" classname="numbers.RationalTest" time="0"/>
+  <testcase name="longValueTruncatesTowardsZero" classname="numbers.RationalTest" time="0"/>
+  <testcase name="resultSimplification" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="subtractAndSimplify" classname="numbers.RationalTest" time="0"/>
   <testcase name="numeratorEqualToDenominator" classname="numbers.RationalTest" time="0"/>
-  <testcase name="reciprocalOfRationalNumberLessThanOne" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="intValueTruncatesTowardsZero" classname="numbers.RationalTest" time="0"/>
+  <testcase name="addZeroHasNoEffect" classname="numbers.RationalTest" time="0"/>
+  <testcase name="reciprocalOfRationalNumberLessThanOne" classname="numbers.RationalTest" time="0"/>
+  <testcase name="floatValueNegativeFractionToDecimal" classname="numbers.RationalTest" time="0.001"/>
+  <testcase name="lessThanBothValuesNegativeAndCurrentValueGreater" classname="numbers.RationalTest" time="0"/>
 </testsuite>
