@@ -32,20 +32,59 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.5</version> <!-- Use the latest version available -->
+                <version>0.8.10</version>
                 <executions>
                     <execution>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
-                    <!-- other configurations necessary for reporting -->
+                    <execution>
+               			<id>report</id>
+		               <phase>test</phase>
+		               <goals>
+		                  <goal>report</goal>
+		               </goals>
+		            </execution>
+		            <execution>
+		               <id>default-jacoco-check</id>
+		               <goals>
+		                  <goal>check</goal>
+		               </goals>
+		               <configuration>
+		                  <rules>
+		                        <rule>
+		                           <element>CLASS</element>
+		                           <excludes>
+		                              <exclude>*Test</exclude>
+		                           </excludes>
+		                           <limits>
+		                              <limit>
+		                                    <counter>INSTRUCTION</counter>
+		                                    <value>COVEREDRATIO</value>
+		                                    <minimum>90%</minimum>
+		                              </limit>
+		                              <limit>
+		                                    <counter>BRANCH</counter>
+		                                    <value>COVEREDRATIO</value>
+		                                    <minimum>90%</minimum>
+		                              </limit>
+		                              <limit>
+		                                    <counter>COMPLEXITY</counter>
+		                                    <value>COVEREDRATIO</value>
+		                                    <minimum>90%</minimum>
+		                              </limit>
+		                           </limits>
+		                        </rule>
+		                  </rules>
+		               </configuration>
+		            </execution>
                 </executions>
             </plugin>
             <plugin>
             	<groupId>org.apache.maven.plugins</groupId>
             	<artifactId>maven-surefire-plugin</artifactId>
-            	<version>2.22.2</version> <!-- Use version that supports JUnit 5 -->
+            	<version>2.22.2</version> <!-- Using version that supports JUnit 5 -->
         </plugin>
         </plugins>
     </build>

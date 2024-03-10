@@ -25,16 +25,6 @@ public class Rational
     	this.numerator = numerator;
     	this.denominator = denominator;
     }
-    
-    public int numerator() 
-    {
-    	   return 0;
-    }
-
-    public int denominator() 
-    {
-    	  return 1;
-    }
 
     public int getNumerator() 
     {
