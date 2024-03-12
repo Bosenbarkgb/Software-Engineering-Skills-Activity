@@ -1,0 +1,112 @@
+-------------------------------------------------------------------------------
+Test set: numbers.RationalDiffblueTest
+-------------------------------------------------------------------------------
+Tests run: 30, Failures: 0, Errors: 27, Skipped: 0, Time elapsed: 0.063 s <<< FAILURE! - in numbers.RationalDiffblueTest
+testEquals2  Time elapsed: 0.011 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.equals(Object)" because "rational" is null
+	at numbers.RationalDiffblueTest.testEquals2(RationalDiffblueTest.java:253)
+
+testEquals3  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.equals(Object)" because "rational" is null
+	at numbers.RationalDiffblueTest.testEquals3(RationalDiffblueTest.java:271)
+
+testFloatValue  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.floatValue()" because "rational" is null
+	at numbers.RationalDiffblueTest.testFloatValue(RationalDiffblueTest.java:68)
+
+testRaisedToThePowerOf  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.raisedToThePowerOf(int)" because "rational" is null
+	at numbers.RationalDiffblueTest.testRaisedToThePowerOf(RationalDiffblueTest.java:218)
+
+testLessThan  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.lessThan(java.lang.Number)" because "rational" is null
+	at numbers.RationalDiffblueTest.testLessThan(RationalDiffblueTest.java:362)
+
+testIsOne  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.isOne()" because "rational" is null
+	at numbers.RationalDiffblueTest.testIsOne(RationalDiffblueTest.java:411)
+
+testMinus  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.minus(numbers.Rational)" because "rational" is null
+	at numbers.RationalDiffblueTest.testMinus(RationalDiffblueTest.java:167)
+
+testTimes  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.times(numbers.Rational)" because "rational" is null
+	at numbers.RationalDiffblueTest.testTimes(RationalDiffblueTest.java:184)
+
+testPlus  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.plus(numbers.Rational)" because "rational" is null
+	at numbers.RationalDiffblueTest.testPlus(RationalDiffblueTest.java:150)
+
+testToString  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.toString()" because "rational" is null
+	at numbers.RationalDiffblueTest.testToString(RationalDiffblueTest.java:443)
+
+testReciprocal  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.reciprocal()" because "rational" is null
+	at numbers.RationalDiffblueTest.testReciprocal(RationalDiffblueTest.java:133)
+
+testDividedBy  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.dividedBy(numbers.Rational)" because "rational" is null
+	at numbers.RationalDiffblueTest.testDividedBy(RationalDiffblueTest.java:201)
+
+testCompareTo  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.compareTo(java.lang.Number)" because "rational" is null
+	at numbers.RationalDiffblueTest.testCompareTo(RationalDiffblueTest.java:101)
+
+testGreaterThan2  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.greaterThan(numbers.Rational)" because "rational" is null
+	at numbers.RationalDiffblueTest.testGreaterThan2(RationalDiffblueTest.java:345)
+
+testGreaterThan  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.greaterThan(java.lang.Number)" because "rational" is null
+	at numbers.RationalDiffblueTest.testGreaterThan(RationalDiffblueTest.java:328)
+
+testOpposite  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.opposite()" because "rational" is null
+	at numbers.RationalDiffblueTest.testOpposite(RationalDiffblueTest.java:117)
+
+testLongValue  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.longValue()" because "rational" is null
+	at numbers.RationalDiffblueTest.testLongValue(RationalDiffblueTest.java:52)
+
+testEqualsAndHashCode2  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.equals(Object)" because "rational" is null
+	at numbers.RationalDiffblueTest.testEqualsAndHashCode2(RationalDiffblueTest.java:308)
+
+testNewRational  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalArgumentException: Denominator cannot be zero.
+	at numbers.RationalDiffblueTest.testNewRational(RationalDiffblueTest.java:505)
+
+testLessThan2  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.lessThan(numbers.Rational)" because "rational" is null
+	at numbers.RationalDiffblueTest.testLessThan2(RationalDiffblueTest.java:379)
+
+testIntValue  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.intValue()" because "rational" is null
+	at numbers.RationalDiffblueTest.testIntValue(RationalDiffblueTest.java:36)
+
+testEquals  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.equals(Object)" because "rational" is null
+	at numbers.RationalDiffblueTest.testEquals(RationalDiffblueTest.java:235)
+
+testEqualsAndHashCode  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.equals(Object)" because "rational" is null
+	at numbers.RationalDiffblueTest.testEqualsAndHashCode(RationalDiffblueTest.java:288)
+
+testIsZero  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.isZero()" because "rational" is null
+	at numbers.RationalDiffblueTest.testIsZero(RationalDiffblueTest.java:395)
+
+testIsMinusOne  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.isMinusOne()" because "rational" is null
+	at numbers.RationalDiffblueTest.testIsMinusOne(RationalDiffblueTest.java:427)
+
+testNewRational2  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Rational object cannot be null.
+	at numbers.RationalDiffblueTest.testNewRational2(RationalDiffblueTest.java:521)
+
+testDoubleValue  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "numbers.Rational.doubleValue()" because "rational" is null
+	at numbers.RationalDiffblueTest.testDoubleValue(RationalDiffblueTest.java:84)
+

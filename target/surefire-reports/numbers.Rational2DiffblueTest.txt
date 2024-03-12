@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: numbers.RationalTest
+Test set: numbers.Rational2DiffblueTest
 -------------------------------------------------------------------------------
-Tests run: 66, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 s - in numbers.RationalTest
+Tests run: 29, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 0.059 s - in numbers.Rational2DiffblueTest

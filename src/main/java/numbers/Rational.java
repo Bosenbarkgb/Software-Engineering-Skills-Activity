@@ -1,63 +1,82 @@
 package numbers;
 
-import java.math.BigInteger;
-
 public class Rational extends Number implements Comparable<Number> {
 
-  private static final long serialVersionUID = 1L;
-  private int numerator;
-  private int denominator;
+  public static final long serialVersionUID = 1L;
+  /**
+   * Numerator for rational number
+   */
+  public int numerator;
+  /**
+   * Denominator for rational number
+   */
+  public int denominator;
 
   /**
-   * Constructs a {@code Rational} number with numerator 0 and denominator 1.
+   * Constructs a rational number representing 0/1.
    */
   public Rational() {
-    this(0, 1); // chaining with 2 param constructor
+    this.numerator = 0;
+    this.denominator = 1;
   }
 
   /**
-   * Constructs a {@code Rational} number with the specified numerator and 1 as the denominator.
+   * Constructs a rational number representing a/1.
    *
-   * @param numerator The numerator of the rational number.
+   * @param a The numerator.
    */
-  public Rational(int numerator) {
-    this(numerator, 1); // chaining with 2 param constructor
+  public Rational(int a) {
+    this.numerator = a;
+    this.denominator = 1;
   }
 
   /**
-   * Constructs a {@code Rational} number with the specified numerator and denominator. Automatically
-   * simplifies the fraction and ensures the denominator is positive.
+   * Constructs a rational number a/b in canonical form.
+   * Canonical form ensures the negative sign, if any, is on the numerator and the fraction is in its simplest form.
    *
-   * @param numerator   The numerator of the rational number.
-   * @param denominator The denominator of the rational number. Cannot be zero.
-   * @throws IllegalArgumentException if the denominator is zero.
+   * @param a The numerator.
+   * @param b The denominator. Must not be zero.
+   * @throws IllegalArgumentException If b is 0 or if the operation would result in an integer overflow.
    */
-  public Rational(int numerator, int denominator) {
-    if (denominator == 0) {
-      throw new IllegalArgumentException("Denominator can't be zero.");
+  public Rational(int a, int b) {
+    if (b == 0) {
+      throw new IllegalArgumentException("Denominator cannot be zero.");
     }
-
-    // Normalize the rational number if the denominator is negative
-    // Ensures that the rational number is always represented with a positive denominator
-    if (denominator < 0) {
-      numerator = -numerator;
-      denominator = -denominator;
+    if (b < 0) {
+      a = -a;
+      b = -b;
     }
-
-    // Simplify the fraction
-    int gcd = gcd(numerator, denominator);
-    this.numerator = numerator / gcd;
-    this.denominator = denominator / gcd;
+    int gcd = gcd(a, b);
+    this.numerator = a / gcd;
+    this.denominator = b / gcd;
   }
 
   /**
-   * Constructs a new {@code Rational} that is a copy of the specified {@code Rational}.
+   * Constructs a new Rational object that is a copy of the specified Rational object.
    *
-   * @param original The {@code Rational} to copy.
+   * @param r The Rational object to copy.
+   * @throws NullPointerException If the specified Rational object is null.
    */
-  public Rational(Rational original) {
-    this.numerator = original.numerator;
-    this.denominator = original.denominator;
+  public Rational(Rational r) {
+    if (r == null) {
+      throw new NullPointerException("Rational object cannot be null.");
+    }
+    this.numerator = r.numerator;
+    this.denominator = r.denominator;
+  }
+
+  /**
+   * Computes the greatest common divisor of two integers.
+   *
+   * @param a An integer.
+   * @param b Another integer.
+   * @return The greatest common divisor of a and b.
+   */
+  public static int gcd(int a, int b) {
+    if (b == 0) {
+      return a;
+    }
+    return gcd(b, a % b);
   }
 
   /**
@@ -79,18 +98,10 @@ public class Rational extends Number implements Comparable<Number> {
   }
 
   /**
-   * Calculates the greatest common divisor (GCD) of two integers. Uses the Euclidean algorithm.
+   * Returns the value of the specified number as an int.
+   * This may involve rounding or truncation.
    *
-   * @param a The first integer.
-   * @param b The second integer.
-   * @return The GCD of {@code a} and {@code b}.
-   */
-  private static int gcd(int a, int b) {
-    return b == 0 ? a : gcd(b, a % b);
-  }
-
-  /**
-   * Returns the integer part of the rational number
+   * @return The numeric value represented by this object after conversion to type int.
    */
   @Override
   public int intValue() {
@@ -98,7 +109,10 @@ public class Rational extends Number implements Comparable<Number> {
   }
 
   /**
-   * Returns the long part of the rational number
+   * Returns the value of the specified number as a long.
+   * This may involve rounding or truncation.
+   *
+   * @return The numeric value represented by this object after conversion to type long.
    */
   @Override
   public long longValue() {
@@ -106,7 +120,10 @@ public class Rational extends Number implements Comparable<Number> {
   }
 
   /**
-   * Returns the float representation of the rational number
+   * Returns the value of the specified number as a float.
+   * This may involve rounding.
+   *
+   * @return The numeric value represented by this object after conversion to type float.
    */
   @Override
   public float floatValue() {
@@ -114,7 +131,10 @@ public class Rational extends Number implements Comparable<Number> {
   }
 
   /**
-   * Returns the double representation of the rational number
+   * Returns the value of the specified number as a double.
+   * This may involve rounding.
+   *
+   * @return The numeric value represented by this object after conversion to type double.
    */
   @Override
   public double doubleValue() {
@@ -122,7 +142,13 @@ public class Rational extends Number implements Comparable<Number> {
   }
 
   /**
-   * Compares the rational numer with another number
+   * Compares this Rational with the specified Object for order.
+   * Returns a negative integer, zero, or a positive integer as this Rational
+   * is less than, equal to, or greater than the specified Object.
+   *
+   * @param o the Object to be compared.
+   * @return A negative integer, zero, or a positive integer as this object
+   *         is less than, equal to, or greater than the specified object.
    */
   @Override
   public int compareTo(Number o) {
@@ -133,31 +159,60 @@ public class Rational extends Number implements Comparable<Number> {
 
   /**
    * Returns the additive inverse of this rational number.
+   * The additive inverse of a/b is -a/b.
    *
-   * @return A {@code Rational} representing the additive inverse.
+   * @return A new Rational object that is the additive inverse of this Rational.
+   * @throws IllegalArgumentException If the operation would cause an integer overflow.
    */
   public Rational opposite() {
-    return new Rational(-this.numerator, this.denominator);
+    return new Rational(-numerator, denominator);
   }
 
   /**
    * Returns the multiplicative inverse (reciprocal) of this rational number.
+   * The multiplicative inverse of a/b is b/a.
    *
-   * @return A {@code Rational} representing the reciprocal.
-   * @throws IllegalArgumentException if the numerator is zero.
+   * @return A new Rational object that is the multiplicative inverse of this Rational.
+   * @throws IllegalArgumentException If this value is 0 or if the operation would cause an integer overflow.
    */
   public Rational reciprocal() {
-    if (this.numerator == 0) {
-      throw new IllegalArgumentException("Can't get the reciprocal of 0");
+    if (numerator == 0) {
+      throw new IllegalArgumentException("Cannot find reciprocal of 0.");
     }
-    return new Rational(this.denominator, this.numerator);
+    return new Rational(denominator, numerator);
   }
 
   /**
-   * Multiplies this rational number by another rational number.
+   * Returns a new Rational number which is the sum of this value and the specified Rational r.
    *
-   * @param r The rational number to multiply by.
-   * @return The product of this rational number and {@code r}.
+   * @param r The Rational number to add to this value.
+   * @return A new Rational representing the sum of this value and r.
+   */
+  public Rational plus(Rational r) {
+    int commonDenominator = this.denominator * r.denominator;
+    int numeratorSum =
+      this.numerator * r.denominator + r.numerator * this.denominator;
+    return new Rational(numeratorSum, commonDenominator);
+  }
+
+  /**
+   * Returns a new Rational number which is the difference between this value and the specified Rational r.
+   *
+   * @param r The Rational number to subtract from this value.
+   * @return A new Rational representing the difference between this value and r.
+   */
+  public Rational minus(Rational r) {
+    int commonDenominator = this.denominator * r.denominator;
+    int numeratorDifference =
+      this.numerator * r.denominator - r.numerator * this.denominator;
+    return new Rational(numeratorDifference, commonDenominator);
+  }
+
+  /**
+   * Returns a new Rational number which is the product of this value and the specified Rational r.
+   *
+   * @param r The Rational number to multiply by this value.
+   * @return A new Rational representing the product of this value and r.
    */
   public Rational times(Rational r) {
     return new Rational(
@@ -167,69 +222,16 @@ public class Rational extends Number implements Comparable<Number> {
   }
 
   /**
-   * Adds another rational number to this rational number.
-   *
-   * @param r The rational number to add.
-   * @return The sum of this rational number and {@code r}.
-   */
-  public Rational plus(Rational r) {
-    int newNumerator =
-      this.numerator * r.denominator + r.numerator * this.denominator;
-    int newDenominator = this.denominator * r.denominator;
-    return new Rational(newNumerator, newDenominator);
-  }
-
-  /**
-   * Subtracts another rational number from this rational number.
-   *
-   * @param r The rational number to subtract.
-   * @return The difference between this rational number and {@code r}.
-   */
-  public Rational minus(Rational r) {
-    BigInteger aNumerator = BigInteger.valueOf(this.numerator);
-    BigInteger aDenominator = BigInteger.valueOf(this.denominator);
-    BigInteger bNumerator = BigInteger.valueOf(r.numerator);
-    BigInteger bDenominator = BigInteger.valueOf(r.denominator);
-
-    // Perform the operations using BigInteger
-    BigInteger newNumerator = aNumerator
-      .multiply(bDenominator)
-      .subtract(aDenominator.multiply(bNumerator));
-    BigInteger newDenominator = aDenominator.multiply(bDenominator);
-
-    // Check for overflow when converting back to int
-    if (
-      newNumerator.compareTo(BigInteger.valueOf(Integer.MAX_VALUE)) > 0 ||
-      newNumerator.compareTo(BigInteger.valueOf(Integer.MIN_VALUE)) < 0 ||
-      newDenominator.compareTo(BigInteger.valueOf(Integer.MAX_VALUE)) > 0 ||
-      newDenominator.compareTo(BigInteger.valueOf(Integer.MIN_VALUE)) < 0
-    ) {
-      throw new IllegalArgumentException("Operation causes integer overflow");
-    }
-
-    // Calculate gcd of BigInteger values
-    BigInteger gcd = newNumerator.gcd(newDenominator);
-    newNumerator = newNumerator.divide(gcd);
-    newDenominator = newDenominator.divide(gcd);
-
-    // Convert BigInteger back to int
-    return new Rational(newNumerator.intValue(), newDenominator.intValue());
-  }
-
-  /**
-   * Divides this rational number by another rational number.
-   *
-   * @param r The rational number to divide by.
-   * @return The quotient of this rational number divided by {@code r}.
-   * @throws IllegalArgumentException if {@code r} is zero.
-   */
-  public Rational dividesBy(Rational r) {
-    // check for division by 0
+     * Returns a new Rational number which is the quotient of dividing this value by the specified Rational r.
+     
+     * @param r The Rational number by which to divide this value.
+     * @return A new Rational representing the quotient of this value and r.
+     * @throws IllegalArgumentException if r is 0.
+     */
+  public Rational dividedBy(Rational r) {
     if (r.numerator == 0) {
-      throw new IllegalArgumentException("Division by 0 is invalid");
+      throw new IllegalArgumentException("Cannot divide by Rational number 0.");
     }
-
-    // Multiply by reciprocal of r
     return new Rational(
       this.numerator * r.denominator,
       this.denominator * r.numerator
@@ -237,129 +239,128 @@ public class Rational extends Number implements Comparable<Number> {
   }
 
   /**
-   * Raises this rational number to the power of {@code n}.
+   * Returns a new Rational number which is this value raised to the power of n.
    *
-   * @param n The exponent.
-   * @return This rational number raised to the power of {@code n}.
-   * @throws IllegalArgumentException if attempting to raise zero to a negative power.
+   * @param n The exponent to which to raise this value.
+   * @return A new Rational representing this value raised to the power of n.
+   * @throws IllegalArgumentException If this value is 0 and n is negative or if the operation would cause an integer overflow.
    */
   public Rational raisedToThePowerOf(int n) {
-    if (this.numerator == 0 && n < 0) {
-      throw new IllegalArgumentException("Can't raise 0 to a negative power");
+    if (numerator == 0 && n < 0) {
+      throw new IllegalArgumentException(
+        "0 cannot be raised to a negative power."
+      );
     }
-
-    // Handling negative powers by using the reciprocal
-    if (n < 0) {
-      // Swap numerator and denominator for reciprocal
-      int newNumerator = (int) Math.pow(this.denominator, -n); // Raising to -n makes it positive
-      int newDenominator = (int) Math.pow(this.numerator, -n);
-      return new Rational(newNumerator, newDenominator);
-    } else {
-      int newNumerator = (int) Math.pow(this.numerator, n);
-      int newDenominator = (int) Math.pow(this.denominator, n);
-      return new Rational(newNumerator, newDenominator);
-    }
+    int newNumerator = (int) Math.pow(numerator, n);
+    int newDenominator = (int) Math.pow(denominator, n);
+    return new Rational(newNumerator, newDenominator);
   }
 
-  // Logic to check equality of object
+  /**
+   * Indicates whether some other object is "equal to" this one.
+   *
+   * @param o The reference object with which to compare.
+   * @return true if this object is the same as the o argument; false otherwise.
+   */
   @Override
   public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
+    if (this == o) return true;
+    if (!(o instanceof Number)) return false;
 
     if (o instanceof Rational) {
-      Rational other = (Rational) o;
-      return (
-        this.numerator == other.numerator &&
-        this.denominator == other.denominator
-      );
-    } else if (o instanceof Float) {
-      float difference = Math.abs(this.floatValue() - (Float) o);
-      return difference < Math.pow(2, -20);
-    } else if (o instanceof Double) {
-      double difference = Math.abs(this.doubleValue() - (Double) o);
-      return difference < Math.pow(2, -40);
+      Rational r = (Rational) o;
+      return this.numerator * r.denominator == this.denominator * r.numerator;
     }
-    return false;
+
+    double difference = Math.abs(
+      this.doubleValue() - ((Number) o).doubleValue()
+    );
+    if (o instanceof Float || o instanceof Double) {
+      return difference < Math.pow(2, -40);
+    } else {
+      return difference == 0;
+    }
   }
 
   /**
-   * Checks if this rational number is greater than another number.
+   * Returns true if this value is strictly greater than the specified number n.
    *
-   * @param n The number to compare against.
-   * @return {@code true} if this is greater than {@code n}; {@code false} otherwise.
+   * @param n The number to compare with this value.
+   * @return true if this value is greater than n; false otherwise.
    */
   public boolean greaterThan(Number n) {
-    return this.doubleValue() > n.doubleValue();
+    return Double.compare(this.doubleValue(), n.doubleValue()) > 0;
   }
 
   /**
-   * Compares this rational number with another rational number to determine if this number is strictly greater.
+   * Returns true if this value is strictly greater than the specified Rational r.
    *
-   * This method performs the comparison by converting both rational numbers to a common denominator and then comparing
-   * their numerators. This approach avoids the need for floating-point arithmetic and preserves the accuracy of the comparison.
-   *
-   * @param r The rational number to compare against.
-   * @return {@code true} if this rational number is strictly greater than {@code r}; {@code false} otherwise.
+   * @param r The Rational to compare with this value.
+   * @return true if this value is greater than r; false otherwise.
    */
   public boolean greaterThan(Rational r) {
-    int thisNumerator = this.numerator * r.denominator;
-    int rNumerator = r.numerator * this.denominator;
-
-    return thisNumerator > rNumerator;
+    return this.compareTo(r) > 0;
   }
 
   /**
-   * Checks if this rational number is less than another rational number.
+   * Returns true if this value is strictly less than the specified number n.
    *
-   * @param r The rational number to compare against.
-   * @return {@code true} if this is less than {@code r}; {@code false} otherwise.
+   * @param n The number to compare with this value.
+   * @return true if this value is less than n; false otherwise.
+   */
+  public boolean lessThan(Number n) {
+    return Double.compare(this.doubleValue(), n.doubleValue()) < 0;
+  }
+
+  /**
+   * Returns true if this value is strictly less than the specified Rational .
+   *
+   * @param r The Rational to compare with this value.
+   * @return true if this value is less than r; false otherwise.
    */
   public boolean lessThan(Rational r) {
-    // Convert both rationals to a common denominator and compare numerators
-    int thisNumerator = this.numerator * r.denominator;
-    int rNumerator = r.numerator * this.denominator;
-
-    return thisNumerator < rNumerator;
+    return this.compareTo(r) < 0;
   }
 
   /**
-   * Checks if this rational number is zero.
+   * Checks if this Rational number is 0.
    *
-   * @return {@code true} if this rational number is zero; {@code false} otherwise.
+   * @return true if this value is 0; false otherwise.
    */
   public boolean isZero() {
-    return this.numerator == 0; // If the numerator is 0, the whole rational number is 0.
+    return numerator == 0;
   }
 
   /**
-   * Checks if this rational number is one.
+   * Checks if this Rational number is 1 in its canonical form.
    *
-   * @return {@code true} if this rational number is one; {@code false} otherwise.
+   * @return true if this value is 1; false otherwise.
    */
   public boolean isOne() {
-    return this.numerator == this.denominator && this.numerator != 0;
+    return numerator == denominator;
   }
 
   /**
-   * Checks if this rational number is minus one.
+   * Checks if this Rational number is -1 in its canonical form.
    *
-   * @return {@code true} if this rational number is minus one; {@code false} otherwise.
+   * @return true if this value is -1; false otherwise.
    */
   public boolean isMinusOne() {
-    return this.numerator == -this.denominator && this.numerator != 0;
+    return numerator == -1 && denominator == 1;
   }
 
-  // Logic for representation as String
+  /**
+   * Returns a string representation of this Rational number.
+   * Whole numbers are represented without a denominator.
+   *
+   * @return A string representation of this value.
+   */
+  @Override
   public String toString() {
-    // Ensure the negative sign is always in the numerator for representation
-    if (denominator < 0) {
-      return (-numerator) + "/" + (-denominator); // Correct the sign placement
-    } else if (denominator == 1) {
-      return String.valueOf(numerator); // Whole number representation
+    if (denominator == 1) {
+      return String.valueOf(numerator);
     } else {
-      return numerator + "/" + denominator; // Standard fraction representation
+      return numerator + "/" + denominator;
     }
   }
 }
